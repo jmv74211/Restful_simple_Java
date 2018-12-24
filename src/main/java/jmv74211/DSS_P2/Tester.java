@@ -116,7 +116,7 @@ public class Tester {
 		object4.setTitle("Mundial de Clubes 2018 Modric: Todos me dicen que tire más, pero me gusta más dar pases a mis compañeros");
 		object4.setHeader("Otro golazo de 'francotirador' de Modric: lleva 12 de 14 goles desde fuera del área");
 		
-		imagesList.add("/images/4.jpg");
+		imagesList.add("https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/12/22/15455154056641.jpg");
 		commentList.add("Es un jugador fantástico");
 		commentList.add("Haz lo que quieras Modric. Como si te quieres venir al Betis");
 		

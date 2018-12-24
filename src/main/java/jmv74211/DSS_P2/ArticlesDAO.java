@@ -26,7 +26,7 @@ public enum ArticlesDAO {
 		object1.setTitle("Athletic Garitano pierde a Raúl García y Yeray");
 		object1.setHeader("Cumplirán sanción por acumulación de amonestaciones ante el Celta");
 		
-		imagesList.add("/images/1.jpg");
+		imagesList.add("https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/12/22/15455145208452.jpg");
 		commentList.add("A ver si Raúl García estando un partido fuera se le aclara la sesera un poco");
 		commentList.add("Raul es ejemplo de darlo todo cada partido, pero esto es fútbol,no una maratón y tiene que dar bastante más que lo que está dando");
 		
@@ -55,11 +55,10 @@ public enum ArticlesDAO {
 		object2.setTitle("Dembélé se acerca a su mejor versión goleadora");
 		object2.setHeader("Suma diez goles y su récord está en doce");
 		
-		imagesList2.add("/images/2.jpg");
-		imagesList2.add("https://www.youtube.com/watch?v=BCFnTPzmbDo");
+		imagesList2.add("https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/12/22/15455024370656.jpg");
+		imagesList2.add("https://www.youtube.com/embed/BCFnTPzmbDo");
 		commentList2.add("Dembélé es un crack ,no como el ficticius que necesita a un rival para el rebote y la carambola");
 		commentList2.add("Esta última semana ha jugado muy bien, va progresando!");
-		
 		object2.setImages(imagesList2);
 		object2.setComments(commentList2);
 		object2.setDate("2018-12-22");
