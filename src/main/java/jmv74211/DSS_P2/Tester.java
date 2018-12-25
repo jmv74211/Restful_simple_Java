@@ -18,9 +18,24 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ *  Clase que envía peticiones HTTP al servicio web y comprueba su respuesta.
+ *  
+ * @author jmv74211
+ * @version 1.1
+ */
 
 public class Tester {
 	
+	
+	/**
+	 *  Método para convertir un string JSON en una lista de objetos Articles
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param text Texto en formato JSON
+	 * @return Lista de objetos Article correspondiente al contenido JSON.
+	 */
 	
 	private static ArrayList<Article> parseJsonToObject(String text) throws JsonParseException, JsonMappingException, IOException{
 		
@@ -39,20 +54,38 @@ public class Tester {
 		
 	}
 	
+	/**
+	 *  Método para convertir una lista de  objetos Article en una cadena JSON
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param articles Lista de objetos Article.
+	 * @return Texto en formato JSON
+	 */
+	
 	private static String parseObjectToJson(ArrayList<Article> articles) throws JsonProcessingException{
 		
 		String jsonText="";
 		ObjectMapper mapper = new ObjectMapper();
 		
-		for(Article a: articles){
-			jsonText += mapper.writeValueAsString(articles) + ",";
-		}
+		
+		jsonText += mapper.writeValueAsString(articles) + ",";
+		
 		
 		jsonText = jsonText.substring(0, jsonText.length()-1);
 		
 		return jsonText;
 		
 	}
+	
+	/**
+	 *  Método para convertir un objeto Article en una cadena JSON
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param article Objeto Artícle
+	 * @return Texto en formato JSON
+	 */
 	
 	private static String parseObjectToJson(Article article) throws JsonProcessingException{
 		
@@ -65,6 +98,13 @@ public class Tester {
 		return jsonText;
 		
 	}
+	
+	/**
+	 *  Método para imprimir la lista de Artículos haciendo uso de una petición GET.
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 */
 	
 	private static void printListArticles() throws JsonParseException, JsonMappingException, IOException{
 		
@@ -87,6 +127,14 @@ public class Tester {
         
 	}
 
+	/**
+	 *  Main que ejecuta una serie de peticiones para comprobar las respuestas del servicio web. Emplea peticiones
+	 *  PUT, POST, GET Y DELETE
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 */
+	
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 		
 		
@@ -162,8 +210,7 @@ public class Tester {
         
         Response postRequest = service.path("articles").path(articleId).request().accept(MediaType.APPLICATION_JSON)
         		.post(Entity.entity(Tester.parseObjectToJson(object4), MediaType.APPLICATION_JSON));
-        
-        System.out.println(postRequest.getStatus());
+       
         // Se imprime la lista
         Tester.printListArticles();	
        

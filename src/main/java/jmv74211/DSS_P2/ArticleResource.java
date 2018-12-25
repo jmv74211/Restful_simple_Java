@@ -12,11 +12,27 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+
+/**
+ *  Clase que gestiona el conjunto de peticiones asociadas al recurso "Articles"
+ *  
+ * @author jmv74211
+ * @version 1.1
+ */
+
 @Path("articles")
 public class ArticleResource{
 	
 /////////////////////////////////////////////////////////////////////////////
 	
+	
+	/**
+	 *  Devuelve los datos asociados a todos los artículos
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @return Lista de artículos.
+	 */
 	@GET
 	@Produces( {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML} )
 	@Consumes( {MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON} )
@@ -32,6 +48,14 @@ public class ArticleResource{
 	
 
 /////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 *   Devuelve los datos asociados a todos los artículos en formato HTML"
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @return HTML formateado con el listado de artículos.
+	 */
 	
 	@GET
 	@Produces(MediaType.TEXT_HTML)
@@ -90,6 +114,14 @@ public class ArticleResource{
 	
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *   Crea un recurso artículo 
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param newArticle datos del artículo
+	 */
+	
 	@PUT
 	@Consumes( {MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON} )
 	public void createArticle(Article newArticle){
@@ -103,15 +135,35 @@ public class ArticleResource{
 
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *   Permite visualizar de un artículo identificado
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param id Identificador del artículo
+	 * @return Datos del artículo identificado
+	 */
+	
 	@GET
 	@Path("/{id}")
-	@Produces( {MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON} )
+	@Consumes( {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML} )
+	@Produces( {MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML} )
 	public Article getArticle(@PathParam("id") int id){
 		System.out.println("called getArticle(" + id + ")");
 		return ArticlesDAO.instance.getArticle(id);
 	}
 	
 /////////////////////////////////////////////////////////////////////////////
+	
+	
+	/**
+	 *   Permite visualizar de un artículo identificado en formato HTML
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param id Identificador del artículo
+	 * @return Datos del artículo identificado en formato HTML
+	 */
 	
 	@GET
 	@Path("/{id}")
@@ -184,6 +236,15 @@ public class ArticleResource{
 
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *   Permite visualizar de un artículo identificado
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param id Identificador del artículo
+	 * @return Datos del artículo identificado
+	 */
+	
 	@POST
 	@Path("/{id}")
 	@Consumes( {MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON} )
@@ -194,6 +255,15 @@ public class ArticleResource{
 	}
 	
 /////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 *   Permite eliminar un recurso identificado
+	 *  
+	 * @author jmv74211
+	 * @version 1.1
+	 * @param id Identificador del artículo
+	 * @return true si se ha borrado con éxito, false en caso contrario.
+	 */
 	
 	@DELETE
 	@Path("/{id}")

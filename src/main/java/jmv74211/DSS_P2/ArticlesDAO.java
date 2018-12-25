@@ -6,14 +6,28 @@ import java.util.HashMap;
 
 import java.util.Map;
 
+/**
+ *  Clase singleton que representa la estructura de datos que almacena y gestiona 
+ *  el conjunto de artículos de fútbol
+ *  
+ * @author jmv74211
+ * @version 1.0
+ */
+
 public enum ArticlesDAO {
 	
-	instance; 
-	private Map<Integer,Article> contentData = new HashMap<Integer, Article>();
-	private int numArticles;
+	instance;   // Instancia de la clase singleton
+	private Map<Integer,Article> contentData = new HashMap<Integer, Article>(); // Contenedor de datos
+	private int numArticles; // Número de artículos en el contenedor de datos.
 	
 /////////////////////////////////////////////////////////////////////////////
 	
+/**
+ * Constructor de la clase. Inicializa variables y crea dos artículos por defecto.
+ * 
+ *  @author jmv74211
+ *  @version 1.0
+ */
 	private ArticlesDAO(){
 		
 		ArrayList<String>imagesList = new ArrayList<String>();
@@ -76,6 +90,14 @@ public enum ArticlesDAO {
 	
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *  Método para devolver la instancia de la clase
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @return instancia DAO
+	 */
+	
 	public Map<Integer, Article> getModel(){
 
 		return this.contentData;
@@ -83,6 +105,14 @@ public enum ArticlesDAO {
 	}
 	
 /////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 *  Método para devolver una lista con todos los artículos almacenados
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @return Artículos almacenados en DAO.
+	 */
 	
 	public ArrayList<Article> getAllArticles(){
 		
@@ -98,6 +128,15 @@ public enum ArticlesDAO {
 
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *  Método para devolver un artículo identificado
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @param id Identificador del artículo
+	 *  @return Artículo identificado por id
+	 */
+	
 	public Article getArticle(int id){
 		
 		for(Article a: this.getModel().values()){
@@ -110,12 +149,29 @@ public enum ArticlesDAO {
 	
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *  Método para contar el número de artículos almacenados
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @return Número de artículos almacenados
+	 */
+	
 	public int countArticles(){
 		return this.contentData.size();
 	}
 	
 /////////////////////////////////////////////////////////////////////////////
-
+	
+	/**
+	 *  Método para almacenar un nuevo artículo
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @param newArticle Artículo que se desea almacenar
+	 *  @return Número de artículos almacenados
+	 */
+	
 	public void createArticle(Article newArticle){
 		this.contentData.put(this.numArticles,newArticle);
 		this.numArticles++;
@@ -124,6 +180,14 @@ public enum ArticlesDAO {
 	
 /////////////////////////////////////////////////////////////////////////////
 	
+	/**
+	 *  Método para eliminar un artículo identificado
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @param id Identificador del artículo
+	 *  @return true si se ha eliminado, false en caso contrario
+	 */
 
 	public boolean deleteArticle(int id){
 		
@@ -140,7 +204,16 @@ public enum ArticlesDAO {
 	}
 
 /////////////////////////////////////////////////////////////////////////////
-		
+	
+	/**
+	 *  Método para actualizar un artículo identificado
+	 * 
+	 *  @author jmv74211
+	 *  @version 1.0
+	 *  @param id Identificador del artículo
+	 *  @param newDataArticle Objeto artículo cuyos datos sobreescriben al actual.
+	 *  @return true si se ha eliminado, false en caso contrario
+	 */
 
 	public boolean updateArticle(int id, Article newDataArticle){
 	
@@ -156,4 +229,5 @@ public enum ArticlesDAO {
 	}
 
 /////////////////////////////////////////////////////////////////////////////
-}
+	
+} // FIN CLASE
