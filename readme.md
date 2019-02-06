@@ -1,4 +1,4 @@
-# Redes neuronales
+# Servicio restful básico en JAVA
 ## Autor: Jonathan Martín Valera
 ### Repositorio creado para la asignatura de *Inteligencia computacional* en el máster de ingeniería informática en Granada
 #### Fecha de realización: Diciembre 2018
