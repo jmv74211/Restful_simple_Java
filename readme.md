@@ -1,6 +1,6 @@
 # Servicio restful básico en JAVA
 ## Autor: Jonathan Martín Valera
-### Repositorio creado para la asignatura de *Desarrollo basado en componentes y servicios* en el máster de ingeniería informática en Granada
+### Repositorio creado para la asignatura de *Desarrollo de software basado en componentes y servicios* en el máster de ingeniería informática en Granada
 #### Fecha de realización: Diciembre 2018
 
 ---
