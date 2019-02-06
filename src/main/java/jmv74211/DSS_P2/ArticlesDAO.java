@@ -70,7 +70,7 @@ public enum ArticlesDAO {
 		object2.setHeader("Suma diez goles y su récord está en doce");
 		
 		imagesList2.add("https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/12/22/15455024370656.jpg");
-		imagesList2.add("https://www.youtube.com/embed/BCFnTPzmbDo");
+		imagesList2.add("https://www.youtube.com/embed/vgGp_mx_pjE");
 		commentList2.add("Dembélé es un crack ,no como el ficticius que necesita a un rival para el rebote y la carambola");
 		commentList2.add("Esta última semana ha jugado muy bien, va progresando!");
 		object2.setImages(imagesList2);
